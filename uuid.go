@@ -12,7 +12,7 @@ func GenerateV4() (UUID, error) {
 	var uuid UUID
 	_, err := rand.Read(uuid[:])
 	if err != nil {
-		return uuid, nil
+		return uuid, err
 	}
 	//13th character is "4" for UUID v4
 	uuid[6] = (uuid[6] | 0x40) & 0x4f
